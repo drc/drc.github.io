@@ -2,27 +2,48 @@
 
 <head>
 
-    <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
 
     <title>daniel cigrang</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=76">
-    <link rel="apple-touch-icon" sizes="120x120" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=120">
-    <link rel="apple-touch-icon" sizes="152x152" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=152">
+    <link rel="apple-touch-icon" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=76">
+    <link rel="apple-touch-icon" sizes="120x120" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=120">
+    <link rel="apple-touch-icon" sizes="152x152" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=152">
     <link rel="shortcut icon" href="favicon_002953/favicon.ico">
     <script>
-    window.addEventListener("load", function() {
-        // Set a timeout...
-        setTimeout(function() {
-            // Hide the address bar!
-            window.scrollTo(0, 1);
-        }, 0);
+    var key = "1ee10a805516427d5ef9fc7e7dacb902";
+    var s = "b567e4af528bb5de6c9a9f5a9a17a7b6";
+
+    var getJSON = function(url, successHandler, errorHandler) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', url, true);
+      xhr.responseType = 'json';
+      xhr.onload = function() {
+        var status = xhr.status;
+        if (status == 200) {
+          successHandler && successHandler(xhr.response);
+        } else {
+          errorHandler && errorHandler(status);
+        }
+      };
+      xhr.send();
+      setTimeout(function(){xhr.abort()}, 5000);
+    };
+
+    getJSON("//ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=danno12277&limit=10&api_key="+key+"&format=json", function(data) {
+        var lastfm = JSON.parse(data); 
+        for(recent in lastfm.recenttracks.track)
+        {
+            document.getElementById("tracks").innerHTML += "<tr><td>" + lastfm.recenttracks.track[recent].name + "</td><td>" + lastfm.recenttracks.track[recent].artist['#text'] + "</td></tr>";
+        }
+    }, function(status) {
+      console.log('Something went wrong.');
     });
     </script>
 </head>
@@ -47,10 +68,36 @@
     <div class="row">
         <div class="col-xs-6 col-sm-4"></div>
         <div class="col-xs-12 col-sm-4">
-            <img src="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=400" class="img-responsive img-circle" alt="Responsive image">
+            <img src="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=400" class="img-responsive img-circle" alt="Responsive image">
         </div>
         <div class="col-xs-6 col-sm-4"></div>
     </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-4"></div>
+        <div class="col-xs-12 col-sm-4"><br>
+        </div>
+        <div class="col-xs-6 col-sm-4"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-4"></div>
+        <div class="col-xs-12 col-sm-4">
+            <center><h3>Recently Listened to from <a href="//last.fm/user/danno12277">Last.FM</a></h3></center>
+        </div>
+        <div class="col-xs-6 col-sm-4"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-4"></div>
+        <div class="col-xs-12 col-sm-4">
+                <table class='table table-responsive' id='tracks'>
+                        <th>Song</th><th>Artist</th>
+                </table>
+        </div>
+        <div class="col-xs-6 col-sm-4"></div>
+    </div>
+
+
     <script type="text/javascript">
     $('a').click(function() {
         $('html, body').animate({
