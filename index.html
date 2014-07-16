@@ -1,102 +1,212 @@
 <html>
 
 <head>
-
-    <link href='//fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
 
     <title>daniel cigrang</title>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=76">
-    <link rel="apple-touch-icon" sizes="120x120" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=120">
-    <link rel="apple-touch-icon" sizes="152x152" href="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=152">
-    <link rel="shortcut icon" href="favicon_002953/favicon.ico">
+    <link rel="apple-touch-icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=76">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=120">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=152">
+    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=32">
+
+    <style type="text/css">
+    body {
+        color: white;
+    }
+    #bg,
+    #search-bg {
+        /*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
+        background-repeat: no-repeat;
+        background-size: 1080px auto;
+    }
+    #bg {
+        background-position: center;
+        padding: 70px 70px 70px 70px;
+    }
+    #search-container {
+        position: relative;
+    }
+    #search-bg {
+        /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+        /* Pull the background 70px higher to the same place as #bg's */
+        background-position: center -70px;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        /* for Firefox */
+    }
+    #search {
+        position: relative;
+        z-index: 100;
+        padding: 50px;
+        background: rgb(30, 30, 30);
+        background: rgba(30, 30, 30, 0.35);
+    }
+    @media (max-width: 600px) {
+        #bg {
+            padding: 10px;
+        }
+        #search-bg {
+            background-position: center -10px;
+        }
+    }
+    #search h2,
+    #search h5,
+    #search h5 a {
+        text-align: center;
+        color: #ffffff;
+        font-weight: normal;
+    }
+    #search h2 {
+        margin-bottom: 50px
+    }
+    #search h5 {
+        margin-top: 70px
+    }
+    </style>
+
     <script>
     var key = "1ee10a805516427d5ef9fc7e7dacb902";
     var s = "b567e4af528bb5de6c9a9f5a9a17a7b6";
+    //var artist = 'Bleachers', album = 'Strange Desire';
 
-    var getJSON = function(url, successHandler, errorHandler) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('get', url, true);
-      xhr.responseType = 'json';
-      xhr.onload = function() {
-        var status = xhr.status;
-        if (status == 200) {
-          successHandler && successHandler(xhr.response);
-        } else {
-          errorHandler && errorHandler(status);
-        }
-      };
-      xhr.send();
-      setTimeout(function(){xhr.abort()}, 5000);
+    var getRecentTracks = function(url, successHandler, errorHandler) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', url, true);
+        xhr.responseType = 'json';
+        xhr.onload = function() {
+            var status = xhr.status;
+            if (status == 200) {
+                successHandler && successHandler(xhr.response);
+            } else {
+                errorHandler && errorHandler(status);
+            }
+        };
+        xhr.send();
+        setTimeout(function() {
+            xhr.abort()
+        }, 5000);
     };
 
-    getJSON("//ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=danno12277&limit=10&api_key="+key+"&format=json", function(data) {
-        var lastfm = JSON.parse(data); 
-        for(recent in lastfm.recenttracks.track)
-        {
+    getRecentTracks("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=danno12277&limit=10&api_key=" + key + "&format=json", function(data) {
+        var lastfm = JSON.parse(data);
+        //debugger;
+        var album = lastfm.recenttracks.track[0].album['#text'];
+        var artist = lastfm.recenttracks.track[0].artist['#text'];
+        for (recent in lastfm.recenttracks.track) {
             document.getElementById("tracks").innerHTML += "<tr><td>" + lastfm.recenttracks.track[recent].name + "</td><td>" + lastfm.recenttracks.track[recent].artist['#text'] + "</td></tr>";
         }
+
+        var getAlbumArt = function(url, successHandler, errorHandler) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status == 200) {
+                    successHandler && successHandler(xhr.response);
+                } else {
+                    errorHandler && errorHandler(status);
+                }
+            };
+            xhr.send();
+            setTimeout(function() {
+                xhr.abort()
+            }, 5000);
+        };
+
+        getAlbumArt("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + key + "&artist=" + artist + "&album=" + album + "&format=json", function(data) {
+            //debugger;
+            var lastfm = JSON.parse(data);
+            console.log(lastfm.album.image[4]['#text']);
+            // for(recent in lastfm.recenttracks.track)
+            // {
+            document.getElementById("bg").style.backgroundImage = "url('" + lastfm.album.image[4]['#text'] + "')";
+            // }
+        }, function(status) {
+            console.log('Something went wrong.');
+        });
+
     }, function(status) {
-      console.log('Something went wrong.');
+        console.log('Something went wrong.');
     });
     </script>
 </head>
 
-<body class="container" style="border=1px">
+<body>
 
+    <div id='bg'>
+        <div id='search-container'>
+            <div id='search-bg'></div>
+            <div id='search' class="container" style="border=1px">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
+                        <h1 id="name">daniel cigrang</h1>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
 
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-center">
-            <h1 id="name">daniel cigrang</h1>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-center">
-          
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6 col-sm-4"></div>
-        <div class="col-xs-12 col-sm-4">
-            <img src="//www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=400" class="img-responsive img-circle" alt="Responsive image">
-        </div>
-        <div class="col-xs-6 col-sm-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6 col-sm-4"></div>
-        <div class="col-xs-12 col-sm-4"><br>
-        </div>
-        <div class="col-xs-6 col-sm-4"></div>
-    </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4"></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <img src="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=400" class="img-responsive img-circle" alt="Responsive image">
+                    </div>
+                    <div class="col-xs-6 col-sm-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4"></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <br>
+                    </div>
+                    <div class="col-xs-6 col-sm-4"></div>
+                </div>
 
-    <div class="row">
-        <div class="col-xs-6 col-sm-4"></div>
-        <div class="col-xs-12 col-sm-4">
-            <center><h3>Recently Listened to from <a href="//last.fm/user/danno12277">Last.FM</a></h3></center>
-        </div>
-        <div class="col-xs-6 col-sm-4"></div>
-    </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4"></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <center>
+                            <h3>Recently Listened to from <a href="http://last.fm/user/danno12277">Last.FM</a>
+                            </h3>
+                        </center>
+                    </div>
+                    <div class="col-xs-6 col-sm-4"></div>
+                </div>
 
-    <div class="row">
-        <div class="col-xs-6 col-sm-4"></div>
-        <div class="col-xs-12 col-sm-4">
-                <table class='table table-responsive' id='tracks'>
-                        <th>Song</th><th>Artist</th>
-                </table>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4"></div>
+                    <div class="col-xs-12 col-sm-4">
+                        <table class='table table-responsive' id='tracks'>
+                            <th>Song</th>
+                            <th>Artist</th>
+                        </table>
+                    </div>
+                    <div class="col-xs-6 col-sm-4"></div>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-6 col-sm-4"></div>
     </div>
-
 
     <script type="text/javascript">
     $('a').click(function() {
