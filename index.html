@@ -65,6 +65,18 @@
             background-position: center -10px;
         }
     }
+    #name a {
+        color: white;
+    }
+    #name a:hover{
+        color:#5bc0de;
+    }
+    #lfm-link {
+        color:white;
+    }
+    #lfm-link:hover{
+        color:#5bc0de;
+    }
     #search h2,
     #search h5,
     #search h5 a {
@@ -132,11 +144,14 @@
 
         getAlbumArt("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + key + "&artist=" + artist + "&album=" + album + "&format=json", function(data) {
             //debugger;
-            var lastfm = JSON.parse(data);
-            console.log(lastfm.album.image[4]['#text']);
-            // for(recent in lastfm.recenttracks.track)
+            var lfm = JSON.parse(data);
+            console.log(lfm.album.image[4]['#text']);
+            // for(recent in lfm.recenttracks.track)
             // {
-            document.getElementById("bg").style.backgroundImage = "url('" + lastfm.album.image[4]['#text'] + "')";
+                if(lfm){
+                     document.getElementById("bg").style.backgroundImage = "url('" + lfm.album.image[4]['#text'] + "')";
+                }
+           
             // }
         }, function(status) {
             console.log('Something went wrong.');
@@ -157,7 +172,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4 text-center">
-                        <h1 id="name">daniel cigrang</h1>
+                        <h1 id="name">daniel cigrang<br/><small><a href="https://www.facebook.com/danielcigrang">facebook</a></small>&nbsp;<small><a href="http://twitter.com/dancigrang">twitter</a></small></h1>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -187,7 +202,7 @@
                     <div class="col-xs-6 col-sm-4"></div>
                     <div class="col-xs-12 col-sm-4">
                         <center>
-                            <h3>Recently Listened to from <a href="http://last.fm/user/danno12277">Last.FM</a>
+                            <h3>Recently Listened to from <a id="lfm-link" href="http://last.fm/user/danno12277">Last.FM</a>
                             </h3>
                         </center>
                     </div>
