@@ -7,6 +7,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./lastfm.js"></script>
     <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -92,75 +93,6 @@
     }
     </style>
 
-    <script>
-    var key = "1ee10a805516427d5ef9fc7e7dacb902";
-    var s = "b567e4af528bb5de6c9a9f5a9a17a7b6";
-    //var artist = 'Bleachers', album = 'Strange Desire';
-
-    var getRecentTracks = function(url, successHandler, errorHandler) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('get', url, true);
-        xhr.responseType = 'json';
-        xhr.onload = function() {
-            var status = xhr.status;
-            if (status == 200) {
-                successHandler && successHandler(xhr.response);
-            } else {
-                errorHandler && errorHandler(status);
-            }
-        };
-        xhr.send();
-        setTimeout(function() {
-            xhr.abort()
-        }, 5000);
-    };
-
-    getRecentTracks("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=danno12277&limit=10&api_key=" + key + "&format=json", function(data) {
-        var lastfm = JSON.parse(data);
-        //debugger;
-        var album = lastfm.recenttracks.track[0].album['#text'];
-        var artist = lastfm.recenttracks.track[0].artist['#text'];
-        for (recent in lastfm.recenttracks.track) {
-            document.getElementById("tracks").innerHTML += "<tr><td>" + lastfm.recenttracks.track[recent].name + "</td><td>" + lastfm.recenttracks.track[recent].artist['#text'] + "</td></tr>";
-        }
-
-        var getAlbumArt = function(url, successHandler, errorHandler) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('get', url, true);
-            xhr.responseType = 'json';
-            xhr.onload = function() {
-                var status = xhr.status;
-                if (status == 200) {
-                    successHandler && successHandler(xhr.response);
-                } else {
-                    errorHandler && errorHandler(status);
-                }
-            };
-            xhr.send();
-            setTimeout(function() {
-                xhr.abort()
-            }, 5000);
-        };
-
-        getAlbumArt("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + key + "&artist=" + artist + "&album=" + album + "&format=json", function(data) {
-            //debugger;
-            var lfm = JSON.parse(data);
-            console.log(lfm.album.image[4]['#text']);
-            // for(recent in lfm.recenttracks.track)
-            // {
-                if(lfm){
-                     document.getElementById("bg").style.backgroundImage = "url('" + lfm.album.image[4]['#text'] + "')";
-                }
-           
-            // }
-        }, function(status) {
-            console.log('Something went wrong.');
-        });
-
-    }, function(status) {
-        console.log('Something went wrong.');
-    });
-    </script>
 </head>
 
 <body>
