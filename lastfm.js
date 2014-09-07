@@ -20,12 +20,16 @@ var getRecent = $.ajax({
         });
 
 getRecent.done(function(data) {
+    console.log('Current artist: ', data.recenttracks.track[0].artist['#text']);
+    console.log('Current album: ', data.recenttracks.track[0].album['#text']);
     $.ajax({
         type: "GET",
-        url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + key + "&artist=" + window.artist + "&album=" + window.album + "&format=json"
+        url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + key + "&artist=" + data.recenttracks.track[0].artist['#text'] + "&album=" + data.recenttracks.track[0].album['#text'] + "&format=json"
     })
         .done(
             function(data) {
+                //console.log(data.album.image[4]);
+                console.log((typeof data.album.image[4] === "undefined") ? "No album link on Last.fm." : data.album.image[4]['#text']);
                 document.getElementById("bg").style.backgroundImage = "url('" + data.album.image[4]['#text'] + "')";
             })
         .fail(
