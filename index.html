@@ -95,7 +95,69 @@
     }
     @media (max-width: 480px) {
         body {
-            background-color: black;
+            background-color: white;
+        }
+        #bg,
+        #search-bg {
+            /*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
+            background-repeat: no-repeat;
+            background-size: 1440px auto;
+        }
+        #bg {
+            background-position: top;
+            padding: 5px 5px 5px 5px;
+        }
+        #search-container {
+            position: relative;
+        }
+        #search-bg {
+            /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: 20;
+            /* Pull the background 70px higher to the same place as #bg's */
+            background-position: center -70px;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+            /* for Firefox */
+        }
+        #search {
+            position: relative;
+            z-index: 100;
+            padding: 50px;
+            background: rgb(30, 30, 30);
+            background: rgba(30, 30, 30, 0.35);
+        }
+        #name a {
+            color: white;
+        }
+        #name a:hover {
+            color: #5bc0de;
+        }
+        #lfm-link {
+            color: white;
+        }
+        #lfm-link:hover {
+            color: #5bc0de;
+        }
+        #search h2,
+        #search h5,
+        #search h5 a {
+            text-align: center;
+            color: #ffffff;
+            font-weight: normal;
+        }
+        #search h2 {
+            margin-bottom: 10px
+        }
+        #search h5 {
+            margin-top: 10px
         }
     }
     </style>
