@@ -18,78 +18,85 @@
     <link rel="shortcut icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=32">
 
     <style type="text/css">
-    body {
-        color: white;
-    }
-    #bg,
-    #search-bg {
-        /*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
-        background-repeat: no-repeat;
-        background-size: 1080px auto;
-    }
-    #bg {
-        background-position: center;
-        padding: 70px 70px 70px 70px;
-    }
-    #search-container {
-        position: relative;
-    }
-    #search-bg {
-        /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        z-index: 99;
-        /* Pull the background 70px higher to the same place as #bg's */
-        background-position: center -70px;
-        -webkit-filter: blur(5px);
-        -moz-filter: blur(5px);
-        -o-filter: blur(5px);
-        -ms-filter: blur(5px);
-        filter: blur(5px);
-        /* for Firefox */
-    }
-    #search {
-        position: relative;
-        z-index: 100;
-        padding: 50px;
-        background: rgb(30, 30, 30);
-        background: rgba(30, 30, 30, 0.35);
-    }
-    @media (max-width: 600px) {
+    @media screen {
+        body {
+            color: white;
+        }
+        #bg,
+        #search-bg {
+            /*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
+            background-repeat: no-repeat;
+            background-size: 1080px auto;
+        }
         #bg {
-            padding: 10px;
+            background-position: center;
+            padding: 70px 70px 70px 70px;
+        }
+        #search-container {
+            position: relative;
         }
         #search-bg {
-            background-position: center -10px;
+            /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: 99;
+            /* Pull the background 70px higher to the same place as #bg's */
+            background-position: center -70px;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+            /* for Firefox */
+        }
+        #search {
+            position: relative;
+            z-index: 100;
+            padding: 50px;
+            background: rgb(30, 30, 30);
+            background: rgba(30, 30, 30, 0.35);
+        }
+        @media (max-width: 600px) {
+            #bg {
+                padding: 10px;
+            }
+            #search-bg {
+                background-position: center -10px;
+            }
+        }
+        #name a {
+            color: white;
+        }
+        #name a:hover {
+            color: #5bc0de;
+        }
+        #lfm-link {
+            color: white;
+        }
+        #lfm-link:hover {
+            color: #5bc0de;
+        }
+        #search h2,
+        #search h5,
+        #search h5 a {
+            text-align: center;
+            color: #ffffff;
+            font-weight: normal;
+        }
+        #search h2 {
+            margin-bottom: 50px
+        }
+        #search h5 {
+            margin-top: 70px
         }
     }
-    #name a {
-        color: white;
-    }
-    #name a:hover{
-        color:#5bc0de;
-    }
-    #lfm-link {
-        color:white;
-    }
-    #lfm-link:hover{
-        color:#5bc0de;
-    }
-    #search h2,
-    #search h5,
-    #search h5 a {
-        text-align: center;
-        color: #ffffff;
-        font-weight: normal;
-    }
-    #search h2 {
-        margin-bottom: 50px
-    }
-    #search h5 {
-        margin-top: 70px
+    @media (max-width: 480px) {
+        body {
+            background-color: black;
+        }
     }
     </style>
 
@@ -104,7 +111,13 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4 text-center">
-                        <h1 id="name">daniel cigrang<br/><small><a href="https://www.facebook.com/danielcigrang">facebook</a></small>&nbsp;<small><a href="http://twitter.com/dancigrang">twitter</a></small></h1>
+                        <h1 id="name">daniel cigrang
+                            <br/>
+                            <small><a href="https://www.facebook.com/danielcigrang">facebook</a>
+                            </small>&nbsp;
+                            <small><a href="http://twitter.com/dancigrang">twitter</a>
+                            </small>
+                        </h1>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
