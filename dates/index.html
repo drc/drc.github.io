@@ -1,0 +1,99 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Work Clock</title>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="dateMeter.js" type="text/javascript" charset="utf-8" async defer></script>
+	<style type="text/css" media="screen">
+		@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+		body{
+			font-family: "Roboto", sans-serif;
+			margin: 5em auto;
+			background: radial-gradient(#f9f9f9 20%, #ddd 80%);
+			width: 550px;
+		}
+
+		meter {
+			width: 500px;
+			height: 25px;
+			-webkit-appearance: none; /* Reset appearance */
+			border: 1px solid #ccc;
+			border-radius: 3px;
+		}
+
+		meter::-webkit-meter-bar {
+			background: none; /* Required to get rid of the default background property */
+			background-color: whiteSmoke;
+			box-shadow: 0 5px 5px -5px #333 inset;
+		}
+
+		meter::-webkit-meter-optimum-value {
+			box-shadow: 0 5px 5px -5px #999 inset;
+			background-image: linear-gradient(
+				90deg, 
+				#2F4F4F 1%,
+				#2F4F4F 100%
+			);*/
+			background-size: 100% 100%;
+		}
+
+		meter::-webkit-meter-optimum-value {
+			-webkit-transition: width .5s;
+		}
+	</style>
+</head>
+<body onload='nice()'>
+<table>
+  <tr>
+    <td><div>Hour</div></td>
+    <td style='text-align:center'><div id='hour'></div></td>
+    <td><div id='hourPer'></div></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><meter id='hourBar' max='100' value='0'></meter></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><div>Day</div></td>
+    <td style='text-align:center'><div id='day'></div></td>
+    <td><div id='dayPer'></div></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><meter id='dayBar' max='100' value='0'></meter></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><div>Week</div></td>
+    <td style='text-align:center'><div id='week'></div></td>
+    <td><div id='weekPer'></div></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><meter id='weekBar' max='100' value='0'></meter></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><div>Month</div></td>
+    <td style='text-align:center'><div id='month'></div></td>
+    <td><div id='monthPer'></div></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><meter id='monthBar' max='100' value='0'></meter></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><div>Year</div></td>
+    <td style='text-align:center'><div id='year'></div></td>
+    <td><div id='yearPer'></div></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><meter id='yearBar' max='100' value='0'></meter></td>
+    <td></td>
+  </tr>
+</table>
+</body>
