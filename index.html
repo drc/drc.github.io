@@ -1,247 +1,262 @@
 <html>
 
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
 
-    <title>daniel cigrang</title>
+	<title>daniel cigrang</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./lastfm.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=76">
-    <link rel="apple-touch-icon" sizes="120x120" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=120">
-    <link rel="apple-touch-icon" sizes="152x152" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=152">
-    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=32">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./lastfm.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=76">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=120">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=152">
+	<link rel="shortcut icon" href="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=32">
 
-    <style type="text/css">
-    img {
-        pointer-events: none;
-    }
-    @media screen {
-        body {
-            color: white;
-        }
-        #bg,
-        #search-bg {
-            /*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
-            background-repeat: no-repeat;
-            background-size: 1080px auto;
-        }
-        #bg {
-            background-position: center;
-            padding: 70px 70px 70px 70px;
-        }
-        #search-container {
-            position: relative;
-        }
-        #search-bg {
-            /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            z-index: 99;
-            /* Pull the background 70px higher to the same place as #bg's */
-            background-position: center -70px;
-            -webkit-filter: blur(5px);
-            -moz-filter: blur(5px);
-            -o-filter: blur(5px);
-            -ms-filter: blur(5px);
-            filter: blur(5px);
-            /* for Firefox */
-        }
-        #search {
-            position: relative;
-            z-index: 100;
-            padding: 50px;
-            background: rgb(30, 30, 30);
-            background: rgba(30, 30, 30, 0.35);
-            /*width: 1080px;*/
-        }
-        @media (max-width: 600px) {
-            #bg {
-                padding: 10px;
-            }
-            #search-bg {
-                background-position: center -10px;
-            }
-        }
-        #name a {
-            color: white;
-        }
-        #name a:hover {
-            color: #5bc0de;
-        }
-        #lfm-link {
-            color: white;
-        }
-        #lfm-link:hover {
-            color: #5bc0de;
-        }
-        #search h2,
-        #search h5,
-        #search h5 a {
-            text-align: center;
-            color: #ffffff;
-            font-weight: normal;
-        }
-        #search h2 {
-            margin-bottom: 50px
-        }
-        #search h5 {
-            margin-top: 70px
-        }
-    }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-        body {
-            background-color: white;
-        }
-        #bg,
-        #search-bg {
-            /*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
-            background-repeat: no-repeat;
-            background-size: 1440px auto;
-        }
-        #bg {
-            background-position: top;
-            padding: 5px 5px 5px 5px;
-        }
-        #search-container {
-            position: relative;
-        }
-        #search-bg {
-            /* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            z-index: 20;
-            /* Pull the background 70px higher to the same place as #bg's */
-            background-position: center -70px;
-            -webkit-filter: blur(5px);
-            -moz-filter: blur(5px);
-            -o-filter: blur(5px);
-            -ms-filter: blur(5px);
-            filter: blur(5px);
-            /* for Firefox */
-        }
-        #search {
-            position: relative;
-            z-index: 100;
-            padding: 50px;
-            background: rgb(30, 30, 30);
-            background: rgba(30, 30, 30, 0.35);
-        }
-        #name a {
-            color: white;
-        }
-        #name a:hover {
-            color: #5bc0de;
-        }
-        #lfm-link {
-            color: white;
-        }
-        #lfm-link:hover {
-            color: #5bc0de;
-        }
-        #search h2,
-        #search h5,
-        #search h5 a {
-            text-align: center;
-            color: #ffffff;
-            font-weight: normal;
-        }
-        #search h2 {
-            margin-bottom: 10px
-        }
-        #search h5 {
-            margin-top: 10px
-        }
-    }
-    </style>
+	<style type="text/css">
+	img {
+		pointer-events: none;
+	}
+	@media screen {
+		body {
+			color: white;
+		}
+		#bg,
+		#search-bg {
+			/*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
+			background-repeat: no-repeat;
+			background-size: 1080px auto;
+		}
+		#bg {
+			background-position: center;
+			padding: 70px 70px 70px 70px;
+		}
+		#search-container {
+			position: relative;
+		}
+		#search-bg {
+			/* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			z-index: 99;
+			/* Pull the background 70px higher to the same place as #bg's */
+			background-position: center -70px;
+			-webkit-filter: blur(5px);
+			-moz-filter: blur(5px);
+			-o-filter: blur(5px);
+			-ms-filter: blur(5px);
+			filter: blur(5px);
+			/* for Firefox */
+		}
+		#search {
+			position: relative;
+			z-index: 100;
+			padding: 50px;
+			background: rgb(30, 30, 30);
+			background: rgba(30, 30, 30, 0.35);
+			/*width: 1080px;*/
+		}
+		@media (max-width: 600px) {
+			#bg {
+				padding: 10px;
+			}
+			#search-bg {
+				background-position: center -10px;
+			}
+		}
+		#name a {
+			color: white;
+		}
+		#name a:hover {
+			color: #5bc0de;
+		}
+		#lfm-link {
+			color: white;
+		}
+		#lfm-link:hover {
+			color: #5bc0de;
+		}
+		#search h2,
+		#search h5,
+		#search h5 a {
+			text-align: center;
+			color: #ffffff;
+			font-weight: normal;
+		}
+		#search h2 {
+			margin-bottom: 50px
+		}
+		#search h5 {
+			margin-top: 70px
+		}
+	}
+	@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+		body {
+			background-color: white;
+		}
+		#bg,
+		#search-bg {
+			/*background-image: url('http://bogleech.com/pokemon/slowpoke.png');*/
+			background-repeat: no-repeat;
+			background-size: 1440px auto;
+		}
+		#bg {
+			background-position: top;
+			padding: 5px 5px 5px 5px;
+		}
+		#search-container {
+			position: relative;
+		}
+		#search-bg {
+			/* Absolutely position it, but stretch it to all four corners, then put it just behind #search's z-index */
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			z-index: 20;
+			/* Pull the background 70px higher to the same place as #bg's */
+			background-position: center -70px;
+			-webkit-filter: blur(5px);
+			-moz-filter: blur(5px);
+			-o-filter: blur(5px);
+			-ms-filter: blur(5px);
+			filter: blur(5px);
+			/* for Firefox */
+		}
+		#search {
+			position: relative;
+			z-index: 100;
+			padding: 50px;
+			background: rgb(30, 30, 30);
+			background: rgba(30, 30, 30, 0.35);
+		}
+		#name a {
+			color: white;
+		}
+		#name a:hover {
+			color: #5bc0de;
+		}
+		#lfm-link {
+			color: white;
+		}
+		#lfm-link:hover {
+			color: #5bc0de;
+		}
+		#search h2,
+		#search h5,
+		#search h5 a {
+			text-align: center;
+			color: #ffffff;
+			font-weight: normal;
+		}
+		#search h2 {
+			margin-bottom: 10px
+		}
+		#search h5 {
+			margin-top: 10px
+		}
+	}
+	</style>
 
 </head>
 
 <body>
 
-    <div id='bg'>
-        <div id='search-container'>
-            <div id='search-bg'></div>
-            <div id='search' class="container" style="border=1px">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 text-center">
-                        <h1 id="name">daniel cigrang
-                            <br/>
-                            <small><a href="https://www.facebook.com/danielcigrang">facebook</a>
-                            </small>&nbsp;
-                            <small><a href="http://twitter.com/dancigrang">twitter</a>
-                            </small>
-                        </h1>
-                    </div>
-                    <div class="col-md-4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 text-center">
+	<div id='bg'>
+		<div id='search-container'>
+			<div id='search-bg'></div>
+			<div id='search' class="container" style="border=1px">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4 text-center">
+						<h1 id="name">daniel cigrang
+							<br/>
+							<small><a href="https://www.facebook.com/danielcigrang">facebook</a>
+							</small>&nbsp;
+							<small><a href="http://twitter.com/dancigrang">twitter</a>
+							</small>
+						</h1>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4 text-center">
 
-                    </div>
-                    <div class="col-md-4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-4"></div>
-                    <div class="col-xs-12 col-sm-4">
-                        <img src="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=400" class="img-responsive img-circle" alt="Responsive image">
-                    </div>
-                    <div class="col-xs-6 col-sm-4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-4"></div>
-                    <div class="col-xs-12 col-sm-4">
-                        <br>
-                    </div>
-                    <div class="col-xs-6 col-sm-4"></div>
-                </div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-4"></div>
+					<div class="col-xs-12 col-sm-4">
+						<img src="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=400" class="img-responsive img-circle" alt="Responsive image">
+					</div>
+					<div class="col-xs-6 col-sm-4"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-4"></div>
+					<div class="col-xs-12 col-sm-4">
+						<br>
+					</div>
+					<div class="col-xs-6 col-sm-4"></div>
+				</div>
 
-                <div class="row">
-                    <div class="col-xs-6 col-sm-4"></div>
-                    <div class="col-xs-12 col-sm-4">
-                        <center>
-                            <h3>Recently Listened to from <a id="lfm-link" href="http://last.fm/user/danno12277">Last.FM</a>
-                            </h3>
-                        </center>
-                    </div>
-                    <div class="col-xs-6 col-sm-4"></div>
-                </div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-4"></div>
+					<div class="col-xs-12 col-sm-4">
+						<center>
+							<h3>Recently Listened to from <a id="lfm-link" href="http://last.fm/user/danno12277">Last.FM</a>
+							</h3>
+						</center>
+					</div>
+					<div class="col-xs-6 col-sm-4"></div>
+				</div>
 
-                <div class="row">
-                    <div class='col-sm-2'></div>
-                    <div class="col-xs-12 col-sm-8">
-                        <table class='table table-responsive' id='tracks'>
-                            <th>Song</th>
-                            <th>Artist</th>
-                        </table>
-                    </div>
-                    <div class="col-xs-6 col-sm-2"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="row">
+					<div class='col-sm-2'></div>
+					<div class="col-xs-12 col-sm-8">
+						<table class='table table-responsive' id='tracks'>
+							<th>Song</th>
+							<th>Artist</th>
+						</table>
+					</div>
+					<div class="col-xs-6 col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <script type="text/javascript">
-    $('a').click(function() {
-        $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
-    </script>
+	<script type="text/javascript">
+	$('a').click(function() {
+		$('html, body').animate({
+			scrollTop: $($.attr(this, 'href')).offset().top
+		}, 500);
+		return false;
+	});
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-60130726-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<a title="Web Statistics" href="http://clicky.com/100820775"><img alt="Web Statistics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+	<script src="//static.getclicky.com/js" type="text/javascript"></script>
+	<script type="text/javascript">try{ clicky.init(100820775); }catch(e){}</script>
+	<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100820775ns.gif" /></p></noscript>
 </body>
 
 </html>
