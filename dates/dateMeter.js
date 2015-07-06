@@ -121,12 +121,15 @@ function nice() {
   monthPer = Math.round(monthPer * 100) / 100;
 
   // minDay * 365 = min per year
-  var minYear = 24 * 60 * 365;
-  //console.log(minYear);
-  minYear = (today.getHours() * 60 + today.getMinutes() + ((day - 1) * 60 * 24)) / minYear;
-
-  var yearPer = (minYear * 100);
-  yearPer = Math.round(yearPer * 100) / 100;
+  var now = new Date();
+  //console.log(now, 'now');
+  var start = new Date(now.getFullYear(), 0, 0);
+  //console.log(start,'start');
+  var diff = now - start;
+  //console.log(diff,'diff');
+  var oneDay = 1000 * 60 * 60 * 24;
+  var yearDay = Math.floor(diff / oneDay);
+  yearPer = Math.round(((yearDay/365)*100) * 100)/100;
 
   $("div#hour").html(hour + ':' + minutes + ':' + seconds);
   $("div#hourPer").html(minper + '%');
