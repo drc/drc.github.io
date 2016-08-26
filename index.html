@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,79 +9,96 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8" async defer></script>
 	<style type="text/css" media="screen">
+		.container {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		@media (min-width: 768px) {
 			.container {
-				padding-right: 15px;
-				padding-left: 15px;
-				margin-right: auto;
-				margin-left: auto;
+				width: 750px;
 			}
-			@media (min-width: 768px) {
-				.container {
-					width: 750px;
-				}
+		}
+
+		@media (min-width: 992px) {
+			.container {
+				width: 970px;
 			}
-			@media (min-width: 992px) {
-				.container {
-					width: 970px;
-				}
+		}
+
+		@media (min-width: 1200px) {
+			.container {
+				width: 1170px;
 			}
-			@media (min-width: 1200px) {
-				.container {
-					width: 1170px;
-				}
-			}
-			.container-fluid {
-				padding-right: 15px;
-				padding-left: 15px;
-				margin-right: auto;
-				margin-left: auto;
-			}
-			body{
-				font-family: 'Arial', sans-serif;
-				font-size: 13px;
-			}
-			a{
-				text-decoration: none;
-			}
-			table{
-				width: 100%;
-			}
-			table#image{
-				width: 50%;
-				/*border:1px solid black;*/
-			}
-			table#contact{
-				width: 50%;
-				border:1px solid black;
-			}
-			table#interest{
-				width: 50%;
-				border:1px solid black;
-			}
-			table#details{
-				width: 50%;
-				border:1px solid black;
-			}
-			td{
-				/*border:1px solid black;*/
-				border:none;
-			}
-			td.head{
-				background-color:rgb(129,171,212);
-				color:white;
-				font-weight: bold;
-			}
-			td.cell_one{
-				background-color:rgb(198,219,240);
-				color: rgb(84,129,171);
-				border: none;
-				font-weight: bold;
-				width:30%;
-			}
-			td.cell_two{
-				background-color:rgb(224,238,250);
-				border: none;/*
+		}
+
+		.container-fluid {
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		body {
+			font-family: 'Arial', sans-serif;
+			font-size: 13px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		table#image {
+			width: 50%;
+			/*border:1px solid black;*/
+		}
+
+		table#contact {
+			width: 50%;
+			border: 1px solid black;
+		}
+
+		table#interest {
+			width: 50%;
+			border: 1px solid black;
+		}
+
+		table#details {
+			width: 50%;
+			border: 1px solid black;
+		}
+
+		td {
+			/*border:1px solid black;*/
+			border: none;
+		}
+
+		td.head {
+			background-color: rgb(129, 171, 212);
+			color: white;
+			font-weight: bold;
+		}
+
+		td.cell_one {
+			background-color: rgb(198, 219, 240);
+			color: rgb(84, 129, 171);
+			border: none;
+			font-weight: bold;
+			width: 30%;
+		}
+
+		td.cell_two {
+			background-color: rgb(224, 238, 250);
+			border: none;
+			/*
 				width:20%;*/
+<<<<<<< HEAD
 			}
 			td#side_cell{
 				border:3px solid;
@@ -88,7 +106,18 @@
 				text-align:center;
 			}
 		</style>
+=======
+		}
+
+		td#side_cell {
+			border: 3px solid;
+			padding: 2px;
+			text-align: center;
+		}
+	</style>
+>>>>>>> 8b92f1f8427655fe154e45e858447d69698c9ab5
 </head>
+
 <body class='container'>
 	<table>
 		<tr>
@@ -123,27 +152,24 @@
 								</tr>
 								<tr>
 									<td>
-										<img src="data:image/gif;base64,R0lGODlhUAAUAJEDANheDPdyGgCqAP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFHgADACwAAAAAUAAUAAACmpyPqcvtD6OctE6Ard4ahA9w4sh4H0impHmG6tudKExTrFvnEYZbgqAL/oaM38A4AR6USaaCl0kgj85lVTK9PqYJ1swKHiqNZKLBbB2fkWXqeuFtIbLAtr2Ody/d+bueexD3pcfXZ1iIdrR26EeIIBjQQ1dI2SgVlven1SUjNyf25tdGxeU0NkkIaADZE+Q6AMXzOktba3trUAAAIfkEBR4AAwAsAwABAA0ACAAAAhLcZGm46sicElGuaqmdWMJ9DAUAIfkECR4AAwAsAQAAABEACgAAAhfcZKmGvO8afEJOVS+1+nCddUkoHqaIFAAh+QQJHgADACwAAAAAUAAUAAACUJxlqbftD6OMaNaJs343gd9020hyCxCkwCKWbtmhqaq0753FM53Y+A/R7VY9oNFymhGLx6aj9VkyndQppYrNarfcrvcLDovH5LL5jE6r14YCACH5BAUoAAMALAAAAABQABQAAAKanI+py+0Po5y0ToCt3hqED3DiyHgfSKaagJhneLDqLLkojVMunPcRxrMIZL7e8MgYDpQT4rLCXAAziWgUcW0SnZHswRYILreso0yJRhrUMebZXY6vuQbwbd4e69N7+dXfFwgndVIYZOWXKGiGNafIN6hgF4ZFtnjp9YTHp9fpMClm9oYpN/bXaJrnmQla5JowBfQ6S1tre2tQAAA7"/>
+										<img src="data:image/gif;base64,R0lGODlhUAAUAJEDANheDPdyGgCqAP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFHgADACwAAAAAUAAUAAACmpyPqcvtD6OctE6Ard4ahA9w4sh4H0impHmG6tudKExTrFvnEYZbgqAL/oaM38A4AR6USaaCl0kgj85lVTK9PqYJ1swKHiqNZKLBbB2fkWXqeuFtIbLAtr2Ody/d+bueexD3pcfXZ1iIdrR26EeIIBjQQ1dI2SgVlven1SUjNyf25tdGxeU0NkkIaADZE+Q6AMXzOktba3trUAAAIfkEBR4AAwAsAwABAA0ACAAAAhLcZGm46sicElGuaqmdWMJ9DAUAIfkECR4AAwAsAQAAABEACgAAAhfcZKmGvO8afEJOVS+1+nCddUkoHqaIFAAh+QQJHgADACwAAAAAUAAUAAACUJxlqbftD6OMaNaJs343gd9020hyCxCkwCKWbtmhqaq0753FM53Y+A/R7VY9oNFymhGLx6aj9VkyndQppYrNarfcrvcLDovH5LL5jE6r14YCACH5BAUoAAMALAAAAABQABQAAAKanI+py+0Po5y0ToCt3hqED3DiyHgfSKaagJhneLDqLLkojVMunPcRxrMIZL7e8MgYDpQT4rLCXAAziWgUcW0SnZHswRYILreso0yJRhrUMebZXY6vuQbwbd4e69N7+dXfFwgndVIYZOWXKGiGNafIN6hgF4ZFtnjp9YTHp9fpMClm9oYpN/bXaJrnmQla5JowBfQ6S1tre2tQAAA7"
+										/>
 									</td>
 								</tr>
 
 								<tr>
 									<td>
 										Last Login:
-										<br/>
-										3/12/2008
+										<br/> 3/12/2008
 									</td>
 								</tr>
 							</table>
 						</td>
 					</tr>
 					<tr>
-						<td> <strong>Mood:</strong>
-							funny
-							<br/>
-							View my:
-							<a href="#" title="">Pics</a>
-							|
+						<td> <strong>Mood:</strong> funny
+							<br/> View my:
+							<a href="#" title="">Pics</a> |
 							<a href="#">Videos</a>
 						</td>
 					</tr>
@@ -194,7 +220,11 @@
 				</table>
 			</td>
 		</tr>
-		<tr><td><iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/114289996&amp;color=0066cc&amp;auto_play=true&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe></td></tr>
+		<tr>
+			<td>
+				<iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192012042&amp;color=0066cc&amp;auto_play=true&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
+			</td>
+		</tr>
 		<tr>
 			<td>
 				<table id='interest'>
@@ -278,5 +308,25 @@
 			</td>
 		</tr>
 	</table>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-60130726-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8b92f1f8427655fe154e45e858447d69698c9ab5
 </html>
