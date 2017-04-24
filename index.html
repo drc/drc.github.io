@@ -8,224 +8,73 @@
 	<link rel="stylesheet" href="">
 	<script type='text/javascript' src="https://unpkg.com/vue@2.2.6"></script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	<style type="text/css" media="screen">
-		.container {
-			padding-right: 15px;
-			padding-left: 15px;
-			margin-right: auto;
-			margin-left: auto;
-		}
-
-		@media (min-width: 768px) {
-			.container {
-				width: 750px;
-			}
-		}
-
-		@media (min-width: 992px) {
-			.container {
-				width: 970px;
-			}
-		}
-
-		@media (min-width: 1200px) {
-			.container {
-				width: 1170px;
-			}
-		}
-
-		.container-fluid {
-			padding-right: 15px;
-			padding-left: 15px;
-			margin-right: auto;
-			margin-left: auto;
-		}
-
-		body {
-			font-family: 'Arial', sans-serif;
-			font-size: 13px;
-		}
-
-		a {
-			text-decoration: none;
-		}
-
-		table {
-			width: 100%;
-		}
-
-		table#image {
-			width: 50%;
-			/*border:1px solid black;*/
-		}
-
-		table#contact {
-			width: 50%;
-			border: 1px solid black;
-		}
-
-		table#interest {
-			width: 50%;
-			border: 1px solid black;
-		}
-
-		table#details {
-			width: 50%;
-			border: 1px solid black;
-		}
-
-		td {
-			/*border:1px solid black;*/
-			border: none;
-		}
-
-		td.head {
-			background-color: rgb(129, 171, 212);
-			color: white;
-			font-weight: bold;
-		}
-
-		td.cell_one {
-			background-color: rgb(198, 219, 240);
-			color: rgb(84, 129, 171);
-			border: none;
-			font-weight: bold;
-			width: 30%;
-		}
-
-		td.cell_two {
-			background-color: rgb(224, 238, 250);
-			border: none;
-			/*
-				width:20%;*/
-		}
-
-		td#side_cell {
-			border: 3px solid;
-			padding: 2px;
-			text-align: center;
-		}
-
-		table td tr {
-			border: 1px solid black;
-		}
-	</style>
-	</style>
+	<style type="text/css" src='css/stylesheet.css' media="screen"></style>
 </head>
 
 <body>
-	<div class='container' id="app">
-		<strong>{{dan.name}}</strong>
-
-		<img src="http://www.gravatar.com/avatar/1cbb6b96b0ae87552bd8041a3740d93a.png?s=200" alt=""></td>
-
-		<div>"I don't update this ever"</div>
-		<div>Male</div>
-		<div id='age'>{{age}} years old</div>
-
-
-		<div>{{dan.city}}, {{dan.state}}</div>
-
-		<div>{{dan.country}}</div>
-
-		<img v-bind:src="onlineNow" />
-
-		<span>
-											Last Login:
-											<br/> 3/12/2008
-										</span>
-
-		<div> <strong>Mood:</strong> funny
-			<br/> View my:
-			<a href="#" title="">Pics</a> |
-			<a href="#">Videos</a>
+	<div id="app">
+		<div id='user-info' class="container">
+			<div class='row'>
+				<strong>{{dan.name}}</strong>
+			</div>
+			<div class='row'>
+				<img style="float:left; padding-right:5px;" class='col' v-bind:src="dan.profileImage" alt="" />
+				<h3 style="float:right;">daniel is in your extended network</h3>
+				<div class="col">
+					<div>"I don't update this ever"</div>
+					<!-- style="clear:both" -->
+					<div>Male</div>
+					<div id='age'>{{age}} years old</div>
+					<div>{{dan.city}}, {{dan.state}}</div>
+					<div>{{dan.country}}</div>
+					<img v-bind:src="onlineNow" />
+					<div>Last Login:<br/> 3/12/2008</div>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<strong>Mood:</strong> funny
+					<br/> View my:
+					<a href="#" title="">Pics</a> |
+					<a href="#">Videos</a>
+				</div>
+			</div>
 		</div>
-		<h3>daniel is in your extended network</h3>
-
-		<div class='head'>Contacting Daniel</div>
-
-		<a href='mailto:danielcigrang@me.com'>Send Message</a>
-
-		<a href='#'>Forward to Friend</a>
-
-		<a target='_blank' href='https://twitter.com/dancigrang'>Add to Friends</a>
-
-		<a href='#'>Add to Favorites</a>
 
 
-
-		<a href='tel:'>IM / Call</a>
-
-		<a href='#'>Block User</a>
-
-
-
-		<a href='#'>Add to Group</a>
-
-		<a href='#'>Rank User</a>
-
+		<div class='container'>
+			<div class="row">
+				<div class='head'>Contacting Daniel</div>
+			</div>
+			<div class="row">
+				<a class='col-6' href='mailto:danielcigrang@me.com'>Send Message</a>
+				<a class='col-6' href='#'>Forward to Friend</a>
+			</div>
+			<div class="row">
+				<a class='col-6' target='_blank' href='https://twitter.com/dancigrang'>Add to Friends</a>
+				<a class='col-6' href='#'>Add to Favorites</a>
+			</div>
+			<div class="row">
+				<a class='col-9' href='tel:'>IM / Call</a>
+				<a class='col-3' href='#'>Block User</a>
+			</div>
+			<div class="row">
+				<a class='col' href='#'>Add to Group</a>
+				<a class='col' href='#'>Rank User</a>
+			</div>
+		</div>
 
 
 
 		<iframe width="50%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192012042&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false"></iframe>
 
-		<table id='interest'>
-			<tr>
-				<td colspan='2' class='head'>Daniel's Interests</td>
-			</tr>
-			<tr v-for="(one, two) in interests">
-				<detail-row opt-one='one'></detail-row>
-				<detail-row opt-one='two'></detail-row>
-			</tr>
-		</table>
+		<attribute-table title="Daniel's Interests" :data-row="interests"></attribute-table>
 
-		<table id='details'>
-			<tr>
-				<td colspan='2' class='head'>Daniel's Details</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Status:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Here For:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Orientation:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Body type:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Ethnicity:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Zodiac Sign:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Children:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Education:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Occupation:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-			<tr>
-				<td class="cell_one">Income:</td>
-				<td class="cell_two">Text Text Text Text</td>
-			</tr>
-		</table>
+		<attribute-table title="Daniel's Details" :data-row="details"></attribute-table>
 
 	</div>
 	<script type="text/javascript" src="js/app.js"></script>
