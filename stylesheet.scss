@@ -1,0 +1,48 @@
+$bg: true;
+$size: 0.20; /* percent */
+$offset: 0.003;
+
+body {
+  @if $bg {
+    background-color: black;
+  }
+}
+
+.r,
+.g,
+.b {
+  &:before {
+    content: "dan cigrang";
+  }
+  /* border: 1px solid black; */
+  font-family: helvetica,sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0);
+  text-align: center;
+  /* margin-top: 50%; */
+  font-size: 8em;
+  position: relative;
+  mix-blend-mode: screen;
+  display: inline-block;
+  position: absolute;
+}
+
+.r {
+  -webkit-text-stroke: 5px rgba(255, 0, 0, 1);
+  /* border-left: 1px solid black; */
+  left: percentage($size - $offset);
+  top: percentage($size - $offset);
+}
+
+.g {
+  -webkit-text-stroke:5px rgba(0, 255, 0, 1);
+  top: percentage($size);
+  left: percentage($size);
+}
+
+.b {
+  -webkit-text-stroke: 5px rgba(0, 0, 255, 1);
+  left: percentage($size + $offset);
+  top: percentage($size + $offset);
+}
