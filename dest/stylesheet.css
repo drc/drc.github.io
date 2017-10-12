@@ -3,9 +3,9 @@
 body {
   background-color: black; }
 
-.red,
+.blue,
 .green,
-.blue {
+.red {
   /* border: 1px solid black; */
   font-family: "Poppins",Helvetica,sans-serif;
   text-transform: uppercase;
@@ -17,9 +17,9 @@ body {
   mix-blend-mode: screen;
   display: inline-block;
   position: absolute; }
-  .red:before,
+  .blue:before,
   .green:before,
-  .blue:before {
+  .red:before {
     content: "dan cigrang"; }
 
 .red {
@@ -37,3 +37,53 @@ body {
   -webkit-text-stroke: 5px blue;
   left: 20.3%;
   top: 20.3%; }
+
+@keyframes slidein {
+  from {
+    margin-top: -3%; }
+  to {
+    margin-top: 0%; } }
+
+.github,
+.instagram,
+.twitter {
+  cursor: pointer;
+  font-family: "Poppins",Helvetica,sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: transparent;
+  /* margin-top: 50%; */
+  font-size: 2vw;
+  -webkit-text-stroke: 1px white; }
+  .github.trail,
+  .instagram.trail,
+  .twitter.trail {
+    animation-duration: 1s;
+    animation-name: slidein; }
+
+.github:before {
+  content: "github"; }
+
+.github:hover {
+  -webkit-text-stroke: 1px red; }
+
+.github.trail {
+  -webkit-text-stroke: 1px red; }
+
+.instagram:before {
+  content: "instagram"; }
+
+.instagram.trail {
+  -webkit-text-stroke: 1px lime; }
+
+.instagram:hover {
+  -webkit-text-stroke: 1px lime; }
+
+.twitter:before {
+  content: "twitter"; }
+
+.twitter:hover {
+  -webkit-text-stroke: 1px blue; }
+
+.twitter.trail {
+  -webkit-text-stroke: 1px blue; }
