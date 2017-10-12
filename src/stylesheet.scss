@@ -1,8 +1,8 @@
 $bg: true;
-$size: 0.20; /* percent */
+$size: 0.20;
+/* percent */
 $offset: 0.003;
-
-@import url('https://fonts.googleapis.com/css?family=Denk+One|Hammersmith+One|Poppins:500');
+@import url( 'https://fonts.googleapis.com/css?family=Denk+One|Hammersmith+One|Poppins:500');
 
 body {
   @if $bg {
@@ -10,9 +10,9 @@ body {
   }
 }
 
-.red,
+.blue,
 .green,
-.blue {
+.red {
   &:before {
     content: "dan cigrang";
   }
@@ -37,7 +37,7 @@ body {
 }
 
 .green {
-  -webkit-text-stroke:5px rgba(0, 255, 0, 1);
+  -webkit-text-stroke: 5px rgba(0, 255, 0, 1);
   top: percentage($size);
   left: percentage($size);
 }
@@ -46,4 +46,82 @@ body {
   -webkit-text-stroke: 5px rgba(0, 0, 255, 1);
   left: percentage($size + $offset);
   top: percentage($size + $offset);
+}
+$linkSize: 1px;
+$red: rgba(255,0,0,1);
+$green: rgba(0,255,0,1);
+$blue: rgba(0,0,255,1);
+$white: rgba(255,255,255,1);
+
+@keyframes slidein {
+  from {
+    margin-top:-3%;
+  }
+
+  to {
+    margin-top:0%;
+  }
+}
+
+.github,
+.instagram,
+.twitter {
+  cursor: pointer;
+  font-family: "Poppins",Helvetica,sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0);
+  // text-align: center;
+  /* margin-top: 50%; */
+  font-size: 2vw;
+  // mix-blend-mode: screen;
+  // display: inline-block;
+  // position: absolute;
+  -webkit-text-stroke: $linkSize $white;
+  &.trail{
+    animation-duration: 1s;
+    animation-name: slidein;
+  }
+}
+
+.github {
+  &:before {
+    content: "github";
+  }
+
+  &:hover {
+    -webkit-text-stroke: $linkSize $red;
+  }
+
+  &.trail {
+    -webkit-text-stroke: $linkSize $red;
+  }
+}
+
+.instagram {
+  &:before {
+    content: "instagram";
+  }
+
+  &.trail {
+    -webkit-text-stroke: $linkSize $green;
+  }
+
+  &:hover {
+    -webkit-text-stroke: $linkSize $green;
+  }
+}
+
+.twitter {
+  &:before {
+    content: "twitter";
+  }
+
+  &:hover {
+    -webkit-text-stroke: $linkSize $blue;
+  }
+
+  &.trail {
+    -webkit-text-stroke: $linkSize $blue;
+  }
 }
