@@ -1,5 +1,5 @@
 (function () {
-  const numRepeat = 20;
+  const numRepeat = 60;
   const main = document.querySelector('#main');
 
   const twitter = document.querySelector('#twitter');
