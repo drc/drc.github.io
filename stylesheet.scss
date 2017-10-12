@@ -8,9 +8,9 @@ body {
   }
 }
 
-.r,
-.g,
-.b {
+.red,
+.green,
+.blue {
   &:before {
     content: "dan cigrang";
   }
@@ -21,27 +21,26 @@ body {
   color: rgba(0, 0, 0, 0);
   text-align: center;
   /* margin-top: 50%; */
-  font-size: 8em;
-  position: relative;
+  font-size: 9vw;
   mix-blend-mode: screen;
   display: inline-block;
   position: absolute;
 }
 
-.r {
+.red {
   -webkit-text-stroke: 5px rgba(255, 0, 0, 1);
   /* border-left: 1px solid black; */
   left: percentage($size - $offset);
   top: percentage($size - $offset);
 }
 
-.g {
+.green {
   -webkit-text-stroke:5px rgba(0, 255, 0, 1);
   top: percentage($size);
   left: percentage($size);
 }
 
-.b {
+.blue {
   -webkit-text-stroke: 5px rgba(0, 0, 255, 1);
   left: percentage($size + $offset);
   top: percentage($size + $offset);
