@@ -2,9 +2,9 @@
 body {
   background-color: black; }
 
-.r,
-.g,
-.b {
+.red,
+.green,
+.blue {
   /* border: 1px solid black; */
   font-family: helvetica,sans-serif;
   text-transform: uppercase;
@@ -12,29 +12,28 @@ body {
   color: transparent;
   text-align: center;
   /* margin-top: 50%; */
-  font-size: 8em;
-  position: relative;
+  font-size: 9vw;
   mix-blend-mode: screen;
   display: inline-block;
   position: absolute; }
 
-.r:before,
-.g:before,
-.b:before {
+.red:before,
+.green:before,
+.blue:before {
   content: "dan cigrang"; }
 
-.r {
+.red {
   -webkit-text-stroke: 5px red;
   /* border-left: 1px solid black; */
   left: 19.7%;
   top: 19.7%; }
 
-.g {
+.green {
   -webkit-text-stroke: 5px lime;
   top: 20%;
   left: 20%; }
 
-.b {
+.blue {
   -webkit-text-stroke: 5px blue;
   left: 20.3%;
   top: 20.3%; }
