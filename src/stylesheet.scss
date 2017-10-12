@@ -2,6 +2,8 @@ $bg: true;
 $size: 0.20; /* percent */
 $offset: 0.003;
 
+@import url('https://fonts.googleapis.com/css?family=Denk+One|Hammersmith+One|Poppins:500');
+
 body {
   @if $bg {
     background-color: black;
@@ -15,7 +17,7 @@ body {
     content: "dan cigrang";
   }
   /* border: 1px solid black; */
-  font-family: helvetica,sans-serif;
+  font-family: "Poppins",Helvetica,sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   color: rgba(0, 0, 0, 0);

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --directory --server --files \"*.css, *.html, *.js\" --https"
+    "start": "browser-sync start --server --files \"./\" --https --index \"./index.html\""
   },
   "license": "MIT",
   "devDependencies": {
