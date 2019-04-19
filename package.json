@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --server --files \"./\" --https --index \"./index.html\""
+    "start": "node index.js"
   },
   "license": "MIT",
-  "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "webpack": "^3.7.1"
-  },
   "dependencies": {}
 }
