@@ -1,3 +1,3 @@
 (function() {
-  window.matchMedia("(prefers-color-scheme: dark)");
+  window.matchMedia('(prefers-color-scheme: dark)');
 })();
