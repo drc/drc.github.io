@@ -1,1 +1,0 @@
-{"version":3,"sources":["scripts/index.js"],"names":["window","matchMedia"],"mappings":"AAAA,CAAC,YAAW;AACVA,EAAAA,MAAM,CAACC,UAAP,CAAkB,8BAAlB;AACD,CAFD","file":"scripts.bcf3243b.js","sourceRoot":"..","sourcesContent":["(function() {\n  window.matchMedia(\"(prefers-color-scheme: dark)\");\n})();\n"]}
