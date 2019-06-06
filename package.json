@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel index.html",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "sass": "sass ./styles/style.scss ./styles/style.css"
   },
   "license": "MIT",
   "devDependencies": {
