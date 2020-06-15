@@ -2,20 +2,58 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Dan Cigrang</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
-    <header>
-      <h1>Dan Cigrang is a web developer.</h1>
-      <aside>This is his webpage.</aside>
-    </header>
-
+    <div class="top-center">
+      <nav>
+        <div id="main-links">
+          <span><a class="header-link" href="#">MySpace.com</a></span>
+          <span><a class="header-link" href="#">Home</a></span>
+        </div>
+        <div id="search-links">
+          The Web
+          <input type="radio" name="searchtype" value="web" checked="" />
+          MySpace
+          <input type="radio" name="searchtype" value="myspace" />
+          <input name="searchrequest" type="text" size="25" maxlength="75" />
+          <input type="submit" value="Search" />
+        </div>
+        <div id="help-links">
+          <span><a href="#help">Help</a></span>
+          <span><a href="#signup">SignUp</a></span>
+        </div>
+      </nav>
+      <div id="sponsor">
+        <ads></ads>
+      </div>
+    </div>
+    <div id="action-links">
+      <ul>
+        <li><a class="header-link" href="#home">Home</a></li>
+        <li><a class="header-link" href="#browse">Browse</a></li>
+        <li><a class="header-link" href="#search">Search</a></li>
+        <li><a class="header-link" href="#invite">Invite</a></li>
+        <li><a class="header-link" href="#rank">Rank</a></li>
+        <li><a class="header-link" href="#mail">Mail</a></li>
+        <li><a class="header-link" href="#blog">Blog</a></li>
+        <li><a class="header-link" href="#favorites">Favorites</a></li>
+        <li><a class="header-link" href="#forum">Forum</a></li>
+        <li><a class="header-link" href="#groups">Groups</a></li>
+        <li><a class="header-link" href="#events">Events</a></li>
+        <li><a class="header-link" href="#games">Games</a></li>
+        <li><a class="header-link" href="#music">Music</a></li>
+        <li><a class="header-link" href="#classifieds">Classifieds</a></li>
+      </ul>
+    </div>
+    <div id="main-content">
+      <div id="bio-content">
+        <div id="bio-name">Tom</div>
+      </div>
+    </div>
     <script src="scripts/index.js"></script>
   </body>
 </html>
