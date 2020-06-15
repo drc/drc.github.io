@@ -224,15 +224,61 @@ div#action-links > ul > li > .header-link:hover {
   text-decoration: underline;
 }
 
-div#main-content { 
+div#main-content {
   width: 952px;
   margin: 0 auto;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+div#bio-content {
+  width: 300px;
+  padding-left: 15px;
+  padding-top: 15px;
+  display: flex;
+  flex-flow: column wrap;
+  height: 210px;
+  justify-content: space-around;
 }
 
 div#bio-name {
-  font-size: 12pt;
+  font-size: 1rem;
   font-weight: 600;
-  padding-left: 15px;
-  padding-top: 15px;
+}
+
+div#bio-content > div > a {
+  color: #003399;
+  text-decoration: none;
+  font-size: 0.6667rem;
+  font-weight: 600;
+}
+
+div#bio-more-pics {
+  align-self: center;
+  margin-top: 20px;
+}
+
+div#bio-last-login {
+  margin-top: 20px;
+}
+
+div#bio-picture {
+  margin-top: 20px;
+}
+
+div#announcements {
+  margin-right: 100px;
+  margin-top: 15px;
+}
+
+div#announcement-broadcast {
+  width: 435px;
+  height: 75px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
