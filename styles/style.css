@@ -125,6 +125,11 @@ table {
 
 /* Start here */
 
+:root {
+  --dark-blue: #003399;
+  --light-blue: #6698cb;
+}
+
 body {
   background-color: #e5e5e5;
   font-family: verdana, arial, sans-serif, helvetica;
@@ -135,7 +140,7 @@ body {
 div.top-center {
   width: 800px;
   margin: 0 auto;
-  background-color: #003399;
+  background-color: var(--dark-blue);
 }
 
 nav {
@@ -200,7 +205,7 @@ div#action-links {
   width: 800px;
   margin: 0 auto;
   height: 26px;
-  background-color: #6698cb;
+  background-color: var(--light-blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,13 +234,14 @@ div#main-content {
   margin: 0 auto;
   background-color: white;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
 div#bio-content {
   width: 300px;
-  padding-left: 15px;
-  padding-top: 15px;
+  margin-left: 15px;
+  margin-top: 15px;
   display: flex;
   flex-flow: column wrap;
   height: 210px;
@@ -248,7 +254,7 @@ div#bio-name {
 }
 
 div#bio-content > div > a {
-  color: #003399;
+  color: var(--dark-blue);
   text-decoration: none;
   font-size: 0.6667rem;
   font-weight: 600;
@@ -281,4 +287,34 @@ div#announcement-broadcast {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+div#bio-more-pics {
+  margin-right: 25px;
+}
+
+div#contact-actions {
+  border: 2px solid var(--light-blue);
+  width: 300px;
+  height: 135px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+div#contact-header {
+  --padding: 10px;
+
+  height: 15px;
+  width: calc(100% - var(--padding));
+  color: white;
+  background-color: var(--light-blue);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-left: var(--padding);
+}
+
+div#contact-options {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
