@@ -128,10 +128,11 @@ table {
 :root {
   --dark-blue: #003399;
   --light-blue: #6698cb;
+  --body-background: #e5e5e5;
 }
 
 body {
-  background-color: #e5e5e5;
+  background-color: var(--body-background);
   font-family: verdana, arial, sans-serif, helvetica;
   font-size: 0.6rem;
   color: #000000;
@@ -144,7 +145,7 @@ div.top-center {
 }
 
 nav {
-  color: white;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,13 +161,13 @@ nav > div > span:first-child::before {
 }
 
 .header-link:link {
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 0.6667rem;
 }
 
 .header-link:visited {
-  color: white;
+  color: #FFFFFF;
 }
 
 .header-link:hover {
@@ -174,7 +175,7 @@ nav > div > span:first-child::before {
 }
 
 nav > div:nth-child(3) > span > a {
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   font-weight: 600;
 }
@@ -198,7 +199,7 @@ div#sponsor {
   width: 800px;
   height: 96px;
   margin: 0 auto;
-  background-color: #003399;
+  background-color: var(--dark-blue);
 }
 
 div#action-links {
@@ -232,10 +233,9 @@ div#action-links > ul > li > .header-link:hover {
 div#main-content {
   width: 952px;
   margin: 0 auto;
-  background-color: white;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 div#bio-content {
@@ -306,7 +306,7 @@ div#contact-header {
 
   height: 15px;
   width: calc(100% - var(--padding));
-  color: white;
+  color: #FFFFFF;
   background-color: var(--light-blue);
   font-size: 0.75rem;
   font-weight: 600;
