@@ -1,4 +1,4 @@
-baseURL = 'http://drc.github.io/'
+baseURL = 'https://drc.github.io/'
 languageCode = 'en-us'
 title = 'Dan Cigrang'
 theme = 'cactus'
