@@ -12,6 +12,7 @@ theme = 'cactus'
     showProjectsList = true
     projectsUrl = "https://github.com/drc"
     rss = true
+    showReadTime = true
 
 # Main menu which appears below site header.
 [[menu.main]]
@@ -56,5 +57,5 @@ theme = 'cactus'
         lineNos = false
         lineNumbersInTable = true
         noClasses = true
-        style = "gruvbox"
+        style = "solarized-dark256"
         tabWidth = 4
