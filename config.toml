@@ -46,7 +46,11 @@ theme = 'cactus'
 
 [[params.social]]
     name = "linkedin"
-    link = "https://www.linkedin.com/in/dancigrang/"
+    link = "https://www.linkedin.com/in/danielcigrang/"
+
+[[params.social]]
+    name = "spotify"
+    link = "https://open.spotify.com/user/dj_bulbasaur?si=28112391f3b0487a"
 
 [markup]
     [markup.highlight]
