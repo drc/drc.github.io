@@ -50,7 +50,7 @@ theme = 'cactus'
 
 [[params.social]]
     name = "spotify"
-    link = "https://open.spotify.com/user/dj_bulbasaur?si=28112391f3b0487a"
+    link = "https://open.spotify.com/user/dj_bulbasaur"
 
 [markup]
     [markup.highlight]
