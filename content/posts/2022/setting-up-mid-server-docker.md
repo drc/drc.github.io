@@ -1,8 +1,12 @@
 ---
 title: "Setting Up Mid Server using Docker"
+categories:
+    - Development
 date: 2022-09-01T16:29:35-05:00
 draft: false
-tags: ["servicenow", "docker"]
+tags:
+    - servicenow
+    - docker
 ---
 
 NOTE: Getting my notes out there first, need to re-write this better at a later date, with images and code samples.
