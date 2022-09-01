@@ -5,11 +5,11 @@ theme = 'cactus'
 
 [params]
     colortheme = "dark"
-    description = "Description update"
+    description = "Development and other notes"
     mainSectionTitle = "Blog"
-    showAllPostsOnHomePage = false
+    showAllPostsOnHomePage = true
     postsOnHomePage = 5
-    showProjectsList = true
+    showProjectsList = false
     projectsUrl = "https://github.com/drc"
     rss = true
     showReadTime = true
