@@ -13,12 +13,12 @@ tags:
 
 Since the Rome release, ServiceNow provides a download of a MID Server configuration using a Docker container. To start, download the Docker config from the MID Server downloads page on the instance by going to **MID Server > Downloads** and clicking on the download link under **Linux Docker Recipe**.
 
-![User Interface for MID Server Download](./Downloads.png "Downloads")
+![User Interface for MID Server Download](/images/Downloads.webp "User Interface for MID Server download")
 
-![Linux Docker Recipe download modal](./recipe.png)
+![Linux Docker Recipe download modal](/images/recipe.webp "Linux Docker Recipe download modal")
 
 
-Included in the download are some scripts and assets that are required to build the image. Since there are parameters that you need to include in the build and rather than providing a full image, the instance only needs to download text files of scripts and a `Dockerfile`. This option makes it a small download and keeps it efficient. 
+Included in the download are some scripts and assets that are required to build the image. Since there are parameters that you need to include in the build and rather than providing a full image, the instance only needs to download text files of scripts and a `Dockerfile`. This option makes it a small download and keeps it efficient.
 
 ```sh
 Permissions Size User Date Modified Name
