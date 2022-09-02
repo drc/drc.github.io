@@ -7,12 +7,14 @@ theme = 'cactus'
     colortheme = "dark"
     description = "Development and other notes"
     mainSectionTitle = "Blog"
+    mainSection = "posts"
     showAllPostsOnHomePage = true
     postsOnHomePage = 5
     showProjectsList = false
     projectsUrl = "https://github.com/drc"
     rss = true
     showReadTime = true
+    tocInline = true
 
 # Main menu which appears below site header.
 [[menu.main]]
@@ -21,8 +23,8 @@ theme = 'cactus'
     weight = 1
 
 [[menu.main]]
-    name = "All posts"
-    url = "/posts"
+    name = "Categories"
+    url = "/categories"
     weight = 2
 
 [[menu.main]]
@@ -55,11 +57,11 @@ theme = 'cactus'
 [markup]
     [markup.highlight]
         codeFences = true
-        guessSyntax = false
+        guessSyntax = true
         hl_Lines = ""
         lineNoStart = 1
         lineNos = false
         lineNumbersInTable = true
         noClasses = true
-        style = "solarized-dark256"
+        style = "gruvbox"
         tabWidth = 4
