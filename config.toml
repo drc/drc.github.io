@@ -2,6 +2,7 @@ baseURL = 'https://dancigrang.dev'
 languageCode = 'en-us'
 title = 'Dan Cigrang'
 theme = 'cactus'
+googleAnalytics = false
 
 [params]
     colortheme = "dark"
