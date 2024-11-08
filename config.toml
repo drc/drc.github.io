@@ -1,68 +1,81 @@
 baseURL = 'https://dancigrang.dev'
 languageCode = 'en-us'
 title = 'Dan Cigrang'
-theme = 'cactus'
-googleAnalytics = false
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
+
+# Google analytics code
+googleAnalytics = "G-xxxxxxxxx"
 
 [params]
-    colortheme = "dark"
-    description = "Development and other notes"
-    mainSectionTitle = "Blog"
-    mainSection = "posts"
-    showAllPostsOnHomePage = true
-    postsOnHomePage = 5
-    showProjectsList = false
-    projectsUrl = "https://github.com/drc"
-    rss = true
-    showReadTime = true
-    tocInline = true
+# Meta description
+description = "A Tech Blog"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hi!'
+homeIntroContent = """
+I'm a web developer from Chicago, IL. I've worked on the ServiceNow platform professionally for the past 10 years at Discover. 
+While my background is in web development, most of my current work is within enterprise infrastructure tools.
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 15
+listSummaries = false
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
 
 # Main menu which appears below site header.
-[[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
+[[params.menu]]
+name = "Home"
+url = "/"
+weight = 1
 
-[[menu.main]]
-    name = "Categories"
-    url = "/categories"
-    weight = 2
+[[params.menu]]
+name = "Categories"
+url = "/categories"
+weight = 2
 
-[[menu.main]]
-    name = "Tags"
-    url = "/tags"
-    weight = 3
+[[params.menu]]
+name = "Tags"
+url = "/tags"
+weight = 3
 
-[[menu.main]]
-    name = "About"
-    url = "/about"
-    weight = 4
+[[params.menu]]
+name = "About"
+url = "/about"
+weight = 4
 
 # Social
 [[params.social]]
-    name = "github"
-    link = "https://github.com/drc"
+name = "github"
+url = "https://github.com/drc"
 
 [[params.social]]
-    name = "email"
-    link = "dancigrang@protonmail.com" # no need for "mailto:" at the start
+name = "email"
+url = "mailto:dancigrang@protonmail.com"
 
 [[params.social]]
-    name = "linkedin"
-    link = "https://www.linkedin.com/in/danielcigrang/"
+name = "linkedin"
+url = "https://www.linkedin.com/in/danielcigrang/"
 
 [[params.social]]
-    name = "spotify"
-    link = "https://open.spotify.com/user/dj_bulbasaur"
+name = "spotify"
+url = "https://open.spotify.com/user/dj_bulbasaur"
 
+# Syntax highligth on code blocks
 [markup]
-    [markup.highlight]
-        codeFences = true
-        guessSyntax = true
-        hl_Lines = ""
-        lineNoStart = 1
-        lineNos = false
-        lineNumbersInTable = true
-        noClasses = true
-        style = "gruvbox"
-        tabWidth = 4
+[markup.highlight]
+style = 'algol'
