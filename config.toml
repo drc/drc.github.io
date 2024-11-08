@@ -79,3 +79,9 @@ url = "https://open.spotify.com/user/dj_bulbasaur"
 [markup]
 [markup.highlight]
 style = 'algol'
+
+[outputs]
+home = ['html']
+section = ['html']
+taxonomy = ['html']
+term = ['html']
