@@ -73,6 +73,18 @@ user points you at screenshots to add.
 
 Filename: kebab-case slug from the title.
 
+### 5. Scaffold the file with Hugo
+Create the file with Hugo so the archetype supplies the skeleton (and the
+correct `date` + `-05:00` offset automatically):
+
+```bash
+hugo new --kind tech-post content/posts/YYYY/<slug>.md
+```
+
+This uses `archetypes/tech-post.md` and auto-creates the year subdir. Then fill
+in the file's frontmatter (replace every placeholder with the real value) and
+write the post body below the frontmatter.
+
 Frontmatter:
 
 ```yaml
@@ -89,7 +101,7 @@ repo: "<optional: local path or URL>"
 ---
 ```
 
-### 5. Commit to main
+### 6. Commit to main
 The user approved direct-to-main, but confirm once before pushing (it goes live).
 
 ```bash

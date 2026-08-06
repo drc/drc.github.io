@@ -80,13 +80,17 @@ Grill: push past one-word answers, ask "why" until it's a real thought. But the
 words must be theirs — you restructure, you don't supply opinions they didn't
 give.
 
-### 5. Write the post
-Draft in the user's voice, first-person, plain-spoken (match the tone of the
-existing site). Follow the six beats as natural sections. Include the artist,
-album, year, and a "listen" link near the top. Use the metadata you fetched so
-the facts are exact.
+### 5. Scaffold the file with Hugo
+Create the file with Hugo so the archetype supplies the skeleton (and the
+correct `date` + `-05:00` offset automatically):
 
-Filename: kebab-case slug from the artist + title.
+```bash
+hugo new --kind music-review content/posts/YYYY/<slug>.md
+```
+
+This uses `archetypes/music-review.md` and auto-creates the year subdir. Then
+fill in the file's frontmatter (replace every placeholder with the real value
+from the user/Spotify) and write the review body below the frontmatter.
 
 Frontmatter — deliberately rich so the user can later build a rendering
 template on it. Every field must be a real value you pulled from Spotify or
@@ -122,7 +126,13 @@ audio_features:
 ---
 ```
 
-### 6. Commit to main
+### 6. Write the post
+Draft in the user's voice, first-person, plain-spoken (match the tone of the
+existing site). Follow the six beats as natural sections. Include the artist,
+album, year, and a "listen" link near the top. Use the metadata you fetched so
+the facts are exact.
+
+### 7. Commit to main
 Confirm once before pushing (it goes live), then:
 
 ```bash
