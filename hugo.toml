@@ -1,0 +1,37 @@
+baseURL = 'https://dancigrang.dev'
+locale = 'en-us'
+title = 'Dan Cigrang'
+theme = 'custom'
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+description = "A Tech Blog"
+
+homeIntroContent = """I'm a web developer from Chicago, IL."""
+
+# Menu
+[[params.menu]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[params.menu]]
+name = "Tags"
+url = "/tags"
+weight = 2
+
+[[params.menu]]
+name = "About"
+url = "/about"
+weight = 3
+
+# Homepage
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Syntax highlight
+[markup]
+[markup.highlight]
+style = 'monokai'
