@@ -1,81 +1,37 @@
 baseURL = 'https://dancigrang.dev'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Dan Cigrang'
-theme = 'typo'
+theme = 'custom'
 
 [taxonomies]
 tag = 'tags'
 
-# Google analytics code
-googleAnalytics = "G-xxxxxxxxx"
-
 [params]
-# Meta description
 description = "A Tech Blog"
 
-# Appearance settings
-theme = 'auto'
-colorPalette = 'default'
-hideHeader = false
+homeIntroContent = """I'm a web developer from Chicago, IL."""
 
-# Intro on main page, content is markdown
-homeIntroTitle = 'Hi!'
-homeIntroContent = """
-I'm a web developer from Chicago, IL. I've worked on the ServiceNow platform professionally for the past 10 years at Discover. 
-While my background is in web development, most of my current work is within enterprise infrastructure tools.
-"""
-
-# Collection to display on home
-homeCollectionTitle = 'Posts'
-homeCollection = 'posts'
-
-# Lists parameters
-paginationSize = 15
-listSummaries = false
-listDateFormat = '2 Jan 2006'
-
-# Breadcrumbs
-breadcrumbs = true
-
-# Main menu which appears below site header.
+# Menu
 [[params.menu]]
 name = "Home"
 url = "/"
 weight = 1
 
 [[params.menu]]
-name = "Categories"
-url = "/categories"
-weight = 2
-
-[[params.menu]]
 name = "Tags"
 url = "/tags"
-weight = 3
+weight = 2
 
 [[params.menu]]
 name = "About"
 url = "/about"
-weight = 4
+weight = 3
 
-# Social
-[[params.social]]
-name = "github"
-url = "https://github.com/drc"
+# Homepage
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
 
-[[params.social]]
-name = "email"
-url = "mailto:dancigrang@protonmail.com"
-
-[[params.social]]
-name = "linkedin"
-url = "https://www.linkedin.com/in/danielcigrang/"
-
-[[params.social]]
-name = "spotify"
-url = "https://open.spotify.com/user/dj_bulbasaur"
-
-# Syntax highligth on code blocks
+# Syntax highlight
 [markup]
 [markup.highlight]
-style = 'algol'
+style = 'monokai'

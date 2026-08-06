@@ -1,0 +1,21 @@
+/* ponytail: bare minimum styles, extend as needed */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+article { margin: 1.5rem 0; }
+time { color: #666; font-size: 0.875rem; }
+footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; }

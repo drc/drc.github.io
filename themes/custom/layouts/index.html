@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section>
+  {{ with .Site.Params.homeIntroContent }}{{ . | markdownify }}{{ end }}
+</section>
+<section>
+  <h2>{{ .Site.Params.homeCollectionTitle }}</h2>
+  {{ range (where .Site.RegularPages "Section" .Site.Params.homeCollection) }}
+    <article>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <time>{{ .Date.Format "2 Jan 2006" }}</time>
+      {{ .Summary }}
+    </article>
+  {{ end }}
+</section>
+{{ end }}
