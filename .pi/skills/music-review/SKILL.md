@@ -100,7 +100,7 @@ from the user's answers; leave absent (don't invent) anything you couldn't get.
 ---
 title: "\"<Album>\" — <Artist> (Review)"
 date: <now, ISO 8601 with -05:00 offset>
-draft: false
+draft: true
 categories:
     - Music
 tags:
@@ -132,8 +132,12 @@ existing site). Follow the six beats as natural sections. Include the artist,
 album, year, and a "listen" link near the top. Use the metadata you fetched so
 the facts are exact.
 
-### 7. Commit to main
-Confirm once before pushing (it goes live), then:
+### 7. Commit to the repo (draft stays hidden)
+Posts go to `main` with `draft: true` by default — committed to the repo but
+**stay offline** (the build uses plain `hugo --minify`, which skips drafts). To
+publish later, flip `draft: true` → `draft: false` and push again. Preview a
+draft locally with `hugo server -D`. Confirm once before pushing (it touches
+your repo):
 
 ```bash
 git add content/posts/YYYY/<slug>.md   # plus any cover image under static/images/

@@ -91,7 +91,7 @@ Frontmatter:
 ---
 title: "..."
 date: <now, ISO 8601 with -05:00 offset, matching existing posts>
-draft: false
+draft: true
 categories:
     - Development
 tags:
@@ -101,8 +101,12 @@ repo: "<optional: local path or URL>"
 ---
 ```
 
-### 6. Commit to main
-The user approved direct-to-main, but confirm once before pushing (it goes live).
+### 6. Commit to the repo (draft stays hidden)
+Posts go to `main` with `draft: true` by default — committed to the repo but
+**stay offline** (the build uses plain `hugo --minify`, which skips drafts). To
+publish later, flip `draft: true` → `draft: false` and push again. Preview a
+draft locally with `hugo server -D`. Confirm once before pushing (it touches
+your repo):
 
 ```bash
 git add content/posts/YYYY/<slug>.md
